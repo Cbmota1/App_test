@@ -1,29 +1,34 @@
 import React, { useState } from 'react';
 import { StyleSheet, Image, Text, View, Button } from 'react-native';
 
+import { Text as ThemedText, View as ThemedView } from '@/components/Themed';
 
 
-export default function TabOneScreen() {
+
+export default function TabTwoScreen() {
+  
   const [carinhoCount, setCarinhoCount] = useState(0);
+
+  
   const fazerCarinho = () => {
     setCarinhoCount(carinhoCount + 1);
   };
 
   return (
-    <View style={styles.container}>
-      <Image source={require('../../assets/images/cute-and-happy-dog-png.webp')} style={styles.image} />
-      <Text style={styles.dogName}>Rex</Text>
+    <ThemedView style={styles.container}>
+      <Image source={require('../../assets/images/pngtree-user-golden-hamster-png-image_15285751.png')} style={styles.image} />
+      <Text style={styles.ratName}>Rudy</Text>
       <Text style={styles.counter}>Petted: {carinhoCount}</Text>
       <Button title="Pet" onPress={fazerCarinho} color="#4CAF50" />
-    </View>
+    </ThemedView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
+    justifyContent: 'center',
     backgroundColor: '#f5f5f5',
     padding: 20,
   },
@@ -36,7 +41,7 @@ const styles = StyleSheet.create({
     borderColor: '#ccc',
     marginBottom: 20,
   },
-  dogName: {
+  ratName: {
     fontSize: 30,
     fontWeight: 'bold',
     color: '#333',
@@ -53,5 +58,10 @@ const styles = StyleSheet.create({
     color: '#333',
     marginTop: 20,
     fontWeight: 'bold',
+  },
+  separator: {
+    marginVertical: 30,
+    height: 1,
+    width: '80%',
   },
 });
