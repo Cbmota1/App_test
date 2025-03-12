@@ -1,27 +1,19 @@
 import React, { useState } from 'react';
 import { StyleSheet, Image, Text, View, Button } from 'react-native';
+import ImgPet from '../components/ImgPet';
 
-import { Text as ThemedText, View as ThemedView } from '@/components/Themed';
 
 
 
 export default function TabTwoScreen() {
-  
-  const [carinhoCount, setCarinhoCount] = useState(0);
+  return(
+  <ImgPet 
+  nome='Romeo'
+  image={require('../../assets/images/Cat-PNG-Photo-1.png')}
+  />
 
+  )
   
-  const fazerCarinho = () => {
-    setCarinhoCount(carinhoCount + 1);
-  };
-
-  return (
-    <ThemedView style={styles.container}>
-      <Image source={require('../../assets/images/Cat-PNG-Photo-1.png')} style={styles.image} />
-      <Text style={styles.catName}>Romeo</Text>
-      <Text style={styles.counter}>Petted: {carinhoCount}</Text>
-      <Button title="Pet" onPress={fazerCarinho} color="#4CAF50" />
-    </ThemedView>
-  );
 }
 
 const styles = StyleSheet.create({
